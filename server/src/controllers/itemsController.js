@@ -2,6 +2,7 @@ const axios = require('axios');
 const { formatItemsResponse, formatItemResponse, formatCategoriesResponse } = require('../utils/responseFormatter');
 const { getMostPopularCategoryId } = require('../utils/getMostPopularCategory');
 const { author } = require('../utils/author');
+const { handleErrors } = require('../utils/handleErrors');
 
 const apiBaseURL = 'https://api.mercadolibre.com';
 
@@ -14,14 +15,17 @@ const itemsController = {
   searchItems: async (req, res) => {
     try {
       const query = req.query.q;
-      const itemsResponse = await axios.get(`${apiBaseURL}/sites/MLA/search?q=${query}`);
+      if (!query) {
+        res.status(400).json({ error: 'No has ingresado un término de búsqueda.' });
+        return;
+      }
+      const itemsResponse = await axios.get(`${apiBaseURL}/sites/MLA/search?limit=4&q=${query}`);
       const categoryId = getMostPopularCategoryId(itemsResponse.data);
       const categories = await getFormateddCategories(categoryId);
       const items = formatItemsResponse(itemsResponse.data);
       res.json({ author, categories, items });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error en la búsqueda' });
+      handleErrors(res, error);
     }
   },
 
@@ -37,8 +41,7 @@ const itemsController = {
 
       res.json({ author, item, categories });
     } catch (error) {
-      console.error(error);
-      res.status(500).json({ error: 'Error al obtener el item' });
+      handleErrors(res, error);
     }
   },
 };
