@@ -3,8 +3,8 @@ import SearchBar from '../components/SearchBar';
 
 const Layout = () => {
   return (
-    <body className="">
-      <header className="flex h-16 bg-yellow items-center justify-center">
+    <div className="font-proxima bg-grey h-screen">
+      <header className="flex items-center justify-center h-16 bg-yellow ">
         <section className="max-w-screen-lg flex w-full gap-4 p-2">
           <img src="src\assets\mercado-libre.svg" alt="MercadoLibre Logo" className="w-36" />
           <SearchBar />
@@ -13,7 +13,7 @@ const Layout = () => {
       <section className="max-w-screen-lg m-auto p-4">
         <Outlet />
       </section>
-    </body>
+    </div>
   );
 };
 

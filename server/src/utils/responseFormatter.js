@@ -12,6 +12,7 @@ function formatItemsResponse(data) {
     picture: item.thumbnail,
     condition: item.condition,
     free_shipping: item.shipping?.free_shipping || false,
+    city: item.address.city_name,
   }));
 
   return items;

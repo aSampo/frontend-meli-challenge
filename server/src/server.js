@@ -1,8 +1,10 @@
 const express = require('express');
-
-const app = express();
+const cors = require('cors');
 const itemsRoutes = require('./routes/items');
 
+const app = express();
+
+app.use(cors());
 app.use('/', itemsRoutes);
 
 const PORT = process.env.PORT || 3000;

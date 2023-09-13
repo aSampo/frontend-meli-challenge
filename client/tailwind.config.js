@@ -7,8 +7,12 @@ export default {
     extend: {
       colors: {
         yellow: '#fff159',
-        blue: '#3483fa'
-      }
+        blue: '#3483fa',
+        grey: '#eeeeee'
+      },
+      fontFamily: {
+        proxima: ['Proxima Nova', 'sans'],
+      },
     },
   },
   plugins: [],

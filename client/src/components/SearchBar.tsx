@@ -8,8 +8,10 @@ const SearchBar = () => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    navigate('/items');
-    setSearchParams({ search: searchValue });
+    if (searchValue.trim().length > 0) {
+      navigate('/items');
+      setSearchParams({ search: searchValue });
+    }
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
