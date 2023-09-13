@@ -2,9 +2,9 @@ import { Outlet } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import logo from '../assets/mercado-libre.svg';
 
-const Home = () => {
+const HomePage = () => {
   return (
-    <body className="font-proxima bg-meli-grey h-screen">
+    <main className="font-proxima bg-meli-grey min-h-screen">
       <header>
         <nav className="flex items-center justify-center h-16 bg-meli-yellow ">
           <section className="max-w-screen-lg flex w-full gap-4 p-2">
@@ -16,8 +16,8 @@ const Home = () => {
       <section className="max-w-screen-lg m-auto p-4">
         <Outlet />
       </section>
-    </body>
+    </main>
   );
 };
 
-export default Home;
+export default HomePage;

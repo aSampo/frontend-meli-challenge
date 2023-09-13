@@ -25,7 +25,7 @@ const SearchBar = () => {
         <input
           placeholder="Nunca dejes de buscar"
           type="text"
-          className="text-base focus:outline outline-blue w-full rounded-sm p-2 border border-gray-300"
+          className="text-base focus:outline outline-blue w-full rounded p-2 border border-gray-300"
           maxLength={120}
           value={searchValue}
           onChange={handleInputChange}

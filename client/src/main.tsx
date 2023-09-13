@@ -2,24 +2,24 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import './index.css';
-import Home from './pages/Home';
-import Items from './pages/Items';
+import HomePage from './pages/HomePage';
+import ItemsPage from './pages/ItemsPage';
 import ErrorPage from './components/ErrorPage';
-import ItemDetail from './pages/ItemDetail';
+import ItemDetailPage from './pages/ItemDetailPage';
 
 const router = createBrowserRouter([
   {
     path: '/',
-    element: <Home />,
+    element: <HomePage />,
     errorElement: <ErrorPage />,
     children: [
       {
         path: 'items',
-        element: <Items />
+        element: <ItemsPage />
       },
       {
         path: 'items/:itemId',
-        element: <ItemDetail />
+        element: <ItemDetailPage />
       }
     ]
   }

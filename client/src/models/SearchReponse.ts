@@ -1,7 +1,7 @@
 import { Author } from './Author';
 import { Item } from './Item';
 
-export interface ApiSearchResponse {
+export interface SearchResponse {
   author: Author;
   categories: string[];
   items: Item[];

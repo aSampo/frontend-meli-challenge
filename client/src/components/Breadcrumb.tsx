@@ -16,7 +16,7 @@ const Breadcrumb: React.FC<BreadcrumbProps> = ({ categories }) => {
                 fill="none"
                 viewBox="0 0 6 10"
               >
-                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4" />
+                <path stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="m1 9 4-4-4-4" />
               </svg>
             ) : null}
             <a href="#" className="inline-flex items-center text-sm font-medium text-meli-blue hover:text-meli-dark-blue">
