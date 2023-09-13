@@ -2,16 +2,19 @@ import axios from 'axios';
 import { SearchResponse } from './models/SearchReponse';
 import { ItemDetailResponse } from './models/ItemDetailResponse';
 
-//TODO move to .env
-const BASE_URL = 'http://localhost:3000';
+const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
 
 export const fetchItemsBySearch = async (searchQuery: string): Promise<SearchResponse> => {
   try {
     const response = await axios.get(`${BASE_URL}/api/items?q=${searchQuery}`);
     return response.data;
   } catch (error) {
-    console.error('Error al cargar los datos de la API', error);
-    throw error;
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.error);
+    } else {
+      console.error('Error al cargar los datos de la API', error);
+      throw error;
+    }
   }
 };
 
@@ -20,7 +23,11 @@ export const fetchItemDetail = async (itemId: string): Promise<ItemDetailRespons
     const response = await axios.get(`${BASE_URL}/api/items/${itemId}`);
     return response.data;
   } catch (error) {
-    console.error('Error al cargar los datos de la API', error);
-    throw error;
+    if (axios.isAxiosError(error)) {
+      throw new Error(error.response?.data.error);
+    } else {
+      console.error('Error al cargar los datos de la API', error);
+      throw error;
+    }
   }
 };

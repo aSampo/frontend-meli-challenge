@@ -5,12 +5,14 @@ import Breadcrumb from '../components/Breadcrumb';
 import Loading from '../components/Loading';
 import { ItemDetail } from '../models/ItemDetail';
 import useLoading from '../hooks/useLoading';
+import ErrorPage from '../components/ErrorPage';
 
 const ItemDetailPage = () => {
   const { itemId } = useParams();
   const { loading, stopLoading, startLoading } = useLoading();
   const [detail, setDetail] = useState<ItemDetail>();
   const [categories, setCategories] = useState<string[]>([]);
+  const [error, setError] = useState<Error | null>();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -23,8 +25,9 @@ const ItemDetailPage = () => {
 
           console.log('data', data);
         }
-      } catch (error) {
-        // TODO handle this type of errors
+      } catch (e) {
+        const error = e as Error;
+        setError(error);
       } finally {
         stopLoading();
       }
@@ -33,9 +36,9 @@ const ItemDetailPage = () => {
     fetchData();
   }, [itemId]);
 
-  if (loading) {
-    return <Loading />;
-  }
+  if (error) return <ErrorPage customMessage={error.message} />;
+
+  if (loading) return <Loading />;
 
   return (
     <section className="bg-white p-4 rounded">
