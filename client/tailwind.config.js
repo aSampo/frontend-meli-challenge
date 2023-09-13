@@ -6,9 +6,10 @@ export default {
   theme: {
     extend: {
       colors: {
-        yellow: '#fff159',
-        blue: '#3483fa',
-        grey: '#eeeeee'
+        'meli-yellow': '#fff159',
+        'meli-blue': '#3483fa',
+        'meli-dark-blue': '#3568c8',
+        'meli-grey': '#eeeeee'
       },
       fontFamily: {
         proxima: ['Proxima Nova', 'sans'],

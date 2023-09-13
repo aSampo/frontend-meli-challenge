@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { ApiSearchResponse } from './models/SearchReponse';
 
+//TODO move to .env
 const BASE_URL = 'http://localhost:3000';
 
 export const fetchItemsBySearch = async (searchQuery: string): Promise<ApiSearchResponse> => {

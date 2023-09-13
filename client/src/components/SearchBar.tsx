@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useSearchParams, useNavigate } from 'react-router-dom';
+import searchIcon from '../assets/search.svg';
 
 const SearchBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -30,7 +31,7 @@ const SearchBar = () => {
           onChange={handleInputChange}
         />
         <button type="submit" className="absolute top-2 right-1 h-6 w-8 flex items-center justify-center border-l border-gray-300">
-          <img src="src\assets\search.svg" alt="Buscar" className="w-4" />
+          <img src={searchIcon} alt="Buscar" className="w-4" />
         </button>
       </div>
     </form>
