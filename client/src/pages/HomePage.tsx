@@ -8,7 +8,7 @@ const HomePage = () => {
       <header>
         <nav className="flex items-center justify-center h-16 bg-meli-yellow ">
           <section className="max-w-screen-lg flex w-full gap-4 p-2">
-            <img src={logo} alt="MercadoLibre Logo" className="w-36" />
+            <img data-testid="meli-logo" src={logo} alt="MercadoLibre Logo" className="w-36" />
             <SearchBar />
           </section>
         </nav>

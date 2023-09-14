@@ -2,7 +2,7 @@ import axios from 'axios';
 import { SearchResponse } from './models/SearchReponse';
 import { ItemDetailResponse } from './models/ItemDetailResponse';
 
-const BASE_URL = process.env.REACT_APP_BASE_URL || 'http://localhost:3000';
+const BASE_URL = 'http://localhost:3000';
 
 export const fetchItemsBySearch = async (searchQuery: string): Promise<SearchResponse> => {
   try {

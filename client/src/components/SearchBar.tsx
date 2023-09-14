@@ -20,9 +20,10 @@ const SearchBar = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="w-full flex justify-center items-center">
+    <form onSubmit={handleSubmit} className="w-full flex justify-center items-center" data-testid="search-bar">
       <div className="relative w-full flex justify-center items-center">
         <input
+          data-testid="search-input"
           placeholder="Nunca dejes de buscar"
           type="text"
           className="text-base focus:outline outline-meli-blue w-full rounded p-2 border border-gray-300"
@@ -30,8 +31,12 @@ const SearchBar = () => {
           value={searchValue}
           onChange={handleInputChange}
         />
-        <button type="submit" className="absolute top-2 right-1 h-6 w-8 flex items-center justify-center border-l border-gray-300">
-          <img src={searchIcon} alt="Buscar" className="w-4" />
+        <button
+          data-testid="search-button"
+          type="submit"
+          className="absolute top-2 right-1 h-6 w-8 flex items-center justify-center border-l border-gray-300"
+        >
+          <img data-testid="search-logo" src={searchIcon} alt="Buscar" className="w-4" />
         </button>
       </div>
     </form>
