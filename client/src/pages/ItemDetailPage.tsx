@@ -5,7 +5,7 @@ import Breadcrumb from '../components/Breadcrumb';
 import Loading from '../components/Loading';
 import { ItemDetail } from '../models/ItemDetail';
 import useLoading from '../hooks/useLoading';
-import ErrorPage from '../components/ErrorPage';
+import ErrorPage from './ErrorPage';
 
 const ItemDetailPage = () => {
   const { itemId } = useParams();

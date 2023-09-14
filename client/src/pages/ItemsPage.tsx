@@ -5,7 +5,7 @@ import { Item } from '../models/Item';
 import Breadcrumb from '../components/Breadcrumb';
 import Loading from '../components/Loading';
 import useLoading from '../hooks/useLoading';
-import ErrorPage from '../components/ErrorPage';
+import ErrorPage from './ErrorPage';
 
 const Items = () => {
   const [searchParams] = useSearchParams();

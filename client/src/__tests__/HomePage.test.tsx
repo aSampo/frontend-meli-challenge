@@ -11,12 +11,12 @@ beforeEach(() => {
   );
 });
 
-test('Renderiza la barra de búsqueda correctamente', () => {
+test('Renders the search bar correctly', () => {
   const searchBarElement = screen.getByTestId('search-bar');
   expect(searchBarElement).toBeInTheDocument();
 });
 
-test('Renderiza el logo de MercadoLibre correctamente', () => {
+test('Renders the MercadoLibre logo correctly', () => {
   const logoElement = screen.getByTestId('meli-logo') as HTMLImageElement;
   expect(logoElement).toBeInTheDocument();
   expect(logoElement.alt).toContain('MercadoLibre Logo');

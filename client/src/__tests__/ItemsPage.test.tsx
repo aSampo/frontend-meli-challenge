@@ -33,7 +33,7 @@ jest.mock('../api', () => ({
 }));
 
 describe('Items Component', () => {
-  it('should render items correctly', async () => {
+  it('Should render items correctly', async () => {
     await act(async () => {
       render(
         <MemoryRouter initialEntries={['/items?search=futbol']}>
