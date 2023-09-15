@@ -57,7 +57,7 @@ const ItemDetailPage = () => {
           <h2 className="text-3xl lg:text-4xl font-bold">
             {Number(detail?.price.amount).toLocaleString('es-AR', {
               style: 'currency',
-              currency: detail?.price.currency
+              currency: detail?.price.currency || 'ARS'
             })}
           </h2>
           <button className="bg-meli-blue rounded text-white h-10 lg:w-full w-36">Comprar</button>
