@@ -2,6 +2,7 @@ import { render, waitFor, screen, act } from '@testing-library/react';
 import { MemoryRouter } from 'react-router-dom';
 import { fetchItemsBySearch } from '../api'; // Asume que has importado fetchItemsBySearch correctamente
 import Items from '../pages/ItemsPage';
+import { HelmetProvider } from 'react-helmet-async';
 
 jest.mock('../api', () => ({
   fetchItemsBySearch: jest.fn().mockResolvedValue({
@@ -36,9 +37,11 @@ describe('Items Component', () => {
   it('Should render items correctly', async () => {
     await act(async () => {
       render(
-        <MemoryRouter initialEntries={['/items?search=futbol']}>
-          <Items />
-        </MemoryRouter>
+        <HelmetProvider>
+          <MemoryRouter initialEntries={['/items?search=futbol']}>
+            <Items />
+          </MemoryRouter>
+        </HelmetProvider>
       );
     });
 
