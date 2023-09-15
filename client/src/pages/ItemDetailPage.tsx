@@ -47,23 +47,32 @@ const ItemDetailPage = () => {
         keywords={[detail?.title || 'Producto', ...categories]}
       />
       <Breadcrumb categories={categories} />
-      <div className="flex flex-col lg:flex-row gap-4">
-        <img src={detail?.picture} alt={detail?.title} className="self-center w-96 h-96 lg:w-[700px] lg:h-[600px] object-contain" />
+      <div data-testid="item-detail" className="flex flex-col lg:flex-row gap-4">
+        <img
+          data-testid="item-img-detail"
+          src={detail?.picture}
+          alt={detail?.title}
+          className="self-center w-96 h-96 lg:w-[700px] lg:h-[600px] object-contain"
+        />
         <section className="p-4 flex flex-col gap-2">
-          <span className="text-sm">
+          <span data-testid="item-sold-detail" className="text-sm">
             {detail?.condition} - {detail?.sold_quantity} vendidos
           </span>
-          <h1 className="text-2xl font-bold">{detail?.title}</h1>
-          <h2 className="text-3xl lg:text-4xl font-bold">
+          <h1 data-testid="item-title-detail" className="text-2xl font-bold">
+            {detail?.title}
+          </h1>
+          <h2 data-testid="item-price-detail" className="text-3xl lg:text-4xl font-bold">
             {Number(detail?.price.amount).toLocaleString('es-AR', {
               style: 'currency',
               currency: detail?.price.currency || 'ARS'
             })}
           </h2>
-          <button className="bg-meli-blue rounded text-white h-10 lg:w-full w-36">Comprar</button>
+          <button data-testid="item-button-detail" className="bg-meli-blue rounded text-white h-10 lg:w-full w-36">
+            Comprar
+          </button>
         </section>
       </div>
-      <section className="p-4 space-y-2">
+      <section className="p-4 space-y-2" data-testid="item-description-detail">
         <h2 className="text-3xl">Descripcion de producto</h2>
         <p className="text-gray-600">{detail?.description}</p>
       </section>

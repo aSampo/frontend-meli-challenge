@@ -46,7 +46,7 @@ const Items = () => {
     <section>
       <Head title={'Resultado de busqueda'} />
       <Breadcrumb categories={categories} />
-      <ul className="bg-white rounded">
+      <ul data-testid="item-list" className="bg-white rounded">
         {items.map((item) => (
           <li key={item.id}>
             <ItemCard item={item} />
