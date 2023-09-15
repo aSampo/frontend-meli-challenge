@@ -7,6 +7,7 @@ import ItemsPage from './pages/ItemsPage';
 import ErrorPage from './pages/ErrorPage';
 import ItemDetailPage from './pages/ItemDetailPage';
 import WelcomePage from './pages/WelcomePage';
+import { HelmetProvider } from 'react-helmet-async';
 
 const router = createBrowserRouter([
   {
@@ -32,6 +33,8 @@ const router = createBrowserRouter([
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <HelmetProvider>
+      <RouterProvider router={router} />
+    </HelmetProvider>
   </React.StrictMode>
 );

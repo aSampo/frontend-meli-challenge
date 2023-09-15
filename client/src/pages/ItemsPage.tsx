@@ -7,6 +7,7 @@ import Loading from '../components/Loading';
 import useLoading from '../hooks/useLoading';
 import ErrorPage from './ErrorPage';
 import ItemCard from '../components/ItemCard';
+import Head from '../components/Head';
 
 const Items = () => {
   const [searchParams] = useSearchParams();
@@ -43,10 +44,11 @@ const Items = () => {
 
   return (
     <section>
+      <Head title={'Resultado de busqueda'} />
       <Breadcrumb categories={categories} />
       <ul className="bg-white rounded">
         {items.map((item) => (
-          <li>
+          <li key={item.id}>
             <ItemCard item={item} />
           </li>
         ))}

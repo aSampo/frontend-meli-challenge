@@ -6,6 +6,7 @@ import Loading from '../components/Loading';
 import { ItemDetail } from '../models/ItemDetail';
 import useLoading from '../hooks/useLoading';
 import ErrorPage from './ErrorPage';
+import Head from '../components/Head';
 
 const ItemDetailPage = () => {
   const { itemId } = useParams();
@@ -22,8 +23,6 @@ const ItemDetailPage = () => {
           const data = await fetchItemDetail(itemId);
           setDetail(data.item);
           setCategories(data.categories);
-
-          console.log('data', data);
         }
       } catch (e) {
         const error = e as Error;
@@ -42,6 +41,11 @@ const ItemDetailPage = () => {
 
   return (
     <section className="bg-white p-4 rounded">
+      <Head
+        title={detail?.title || 'Detalle de Producto'}
+        description={detail?.description}
+        keywords={[detail?.title || 'Producto', ...categories]}
+      />
       <Breadcrumb categories={categories} />
       <div className="flex flex-col lg:flex-row gap-4">
         <img src={detail?.picture} alt={detail?.title} className="self-center w-96 h-96 lg:w-[700px] lg:h-[600px] object-contain" />
@@ -59,7 +63,7 @@ const ItemDetailPage = () => {
           <button className="bg-meli-blue rounded text-white h-10 lg:w-full w-36">Comprar</button>
         </section>
       </div>
-      <section className="lg:w-3/6 p-4 space-y-2">
+      <section className="p-4 space-y-2">
         <h2 className="text-3xl">Descripcion de producto</h2>
         <p className="text-gray-600">{detail?.description}</p>
       </section>
