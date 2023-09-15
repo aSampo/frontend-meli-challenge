@@ -10,11 +10,11 @@ describe('WelcomePage', () => {
       </HelmetProvider>
     );
 
-    expect(screen.getByText('¡Bienvenido a MercadoLibre!')).toBeInTheDocument();
+    expect(screen.getByText('¡Bienvenido a Mercado Libre!')).toBeInTheDocument();
 
-    const logoImage = screen.getByAltText('MercadoLibre Logo') as HTMLImageElement;
+    const logoImage = screen.getByAltText('Mercado Libre Logo') as HTMLImageElement;
     expect(logoImage).toBeInTheDocument();
-    expect(logoImage.alt).toContain('MercadoLibre Logo');
+    expect(logoImage.alt).toContain('Mercado Libre Logo');
 
     expect(screen.getByText('Encuentra los mejores productos aquí.')).toBeInTheDocument();
   });

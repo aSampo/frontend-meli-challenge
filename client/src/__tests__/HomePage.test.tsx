@@ -16,8 +16,8 @@ test('Renders the search bar correctly', () => {
   expect(searchBarElement).toBeInTheDocument();
 });
 
-test('Renders the MercadoLibre logo correctly', () => {
+test('Renders the Mercado Libre logo correctly', () => {
   const logoElement = screen.getByTestId('meli-logo') as HTMLImageElement;
   expect(logoElement).toBeInTheDocument();
-  expect(logoElement.alt).toContain('MercadoLibre Logo');
+  expect(logoElement.alt).toContain('Mercado Libre Logo');
 });
