@@ -69,4 +69,19 @@ Asegúrate de tener las siguientes herramientas instaladas en tu sistema:
 7. Buscar productos:
    
       En el http://localhost:3001/ (o el puerto que eligio) deberia mostrarse la aplicacion lista para usar
+## 🧪 Correr tests
+1. En la ruta del proyecto ve a la carpeta del cliente:
+   ```bash
+   cd frontend-meli-challenge/client
+   
+3. Ejectuta los test:
+    ```bash
+   npm run test
+    ```
+    o para ejecutar el coverage:
+   
+     ```bash
+       npm run coverage
+     ```
 
+   
