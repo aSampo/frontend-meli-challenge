@@ -44,8 +44,7 @@ const ItemDetailPage = () => {
     <section className="bg-white p-4 rounded">
       <Breadcrumb categories={categories} />
       <div className="flex flex-col lg:flex-row gap-4">
-        <img src={detail?.picture} alt={detail?.title} className="self-center w-96 lg:w-[700px] object-contain" />
-
+        <img src={detail?.picture} alt={detail?.title} className="self-center w-96 h-96 lg:w-[700px] lg:h-[600px] object-contain" />
         <div className="p-4 flex flex-col gap-2">
           <span className="text-sm">
             {detail?.condition} - {detail?.sold_quantity} vendidos
@@ -60,7 +59,7 @@ const ItemDetailPage = () => {
           <button className="bg-meli-blue rounded text-white h-10 lg:w-full w-36">Comprar</button>
         </div>
       </div>
-      <div className="lg:w-2/3 p-4 space-y-2">
+      <div className="lg:w-3/6 p-4 space-y-2">
         <h2 className="text-3xl">Descripcion de producto</h2>
         <p className="text-gray-600">{detail?.description}</p>
       </div>

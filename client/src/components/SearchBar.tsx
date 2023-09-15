@@ -1,11 +1,12 @@
-import { useState } from 'react';
-import { useSearchParams, useNavigate } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import { useSearchParams, useNavigate, useLocation } from 'react-router-dom';
 import searchIcon from '../assets/search.svg';
 
 const SearchBar = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [searchValue, setSearchValue] = useState(searchParams.get('search') || '');
   const navigate = useNavigate();
+  const location = useLocation();
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -18,6 +19,10 @@ const SearchBar = () => {
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSearchValue(event.target.value);
   };
+
+  useEffect(() => {
+    setSearchValue(searchParams.get('search') || '');
+  }, [location, searchParams]);
 
   return (
     <form onSubmit={handleSubmit} className="w-full flex justify-center items-center" data-testid="search-bar">

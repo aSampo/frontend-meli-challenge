@@ -1,4 +1,4 @@
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 import SearchBar from '../components/SearchBar';
 import logo from '../assets/mercado-libre.svg';
 
@@ -8,7 +8,9 @@ const HomePage = () => {
       <header>
         <nav className="flex items-center justify-center h-16 bg-meli-yellow ">
           <section className="max-w-screen-lg flex w-full gap-4 p-2">
-            <img data-testid="meli-logo" src={logo} alt="MercadoLibre Logo" className="w-36" />
+            <Link to="/" aria-label="Volver al inicio">
+              <img data-testid="meli-logo" src={logo} alt="MercadoLibre Logo" className="w-36" />
+            </Link>
             <SearchBar />
           </section>
         </nav>

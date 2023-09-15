@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import ItemsPage from './pages/ItemsPage';
 import ErrorPage from './pages/ErrorPage';
 import ItemDetailPage from './pages/ItemDetailPage';
+import WelcomePage from './pages/WelcomePage';
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,10 @@ const router = createBrowserRouter([
     element: <HomePage />,
     errorElement: <ErrorPage />,
     children: [
+      {
+        path: '',
+        element: <WelcomePage />
+      },
       {
         path: 'items',
         element: <ItemsPage />
