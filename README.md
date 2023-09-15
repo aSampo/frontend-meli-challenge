@@ -1,4 +1,4 @@
-# Frontend Mercado Libre Challenge | Andres Sampo
+# Frontend Mercado Libre Challenge by Andres Sampo 👨🏻‍💻
 ![image](https://github.com/aSampo/frontend-meli-challenge/assets/29290423/bfcaff21-0b44-4ad2-98fc-893494d0407e)
 
 
