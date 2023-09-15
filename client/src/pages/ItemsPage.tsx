@@ -44,11 +44,13 @@ const Items = () => {
   return (
     <section>
       <Breadcrumb categories={categories} />
-      <article className="bg-white rounded">
+      <ul className="bg-white rounded">
         {items.map((item) => (
-          <ItemCard item={item} />
+          <li>
+            <ItemCard item={item} />
+          </li>
         ))}
-      </article>
+      </ul>
     </section>
   );
 };

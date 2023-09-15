@@ -45,24 +45,24 @@ const ItemDetailPage = () => {
       <Breadcrumb categories={categories} />
       <div className="flex flex-col lg:flex-row gap-4">
         <img src={detail?.picture} alt={detail?.title} className="self-center w-96 h-96 lg:w-[700px] lg:h-[600px] object-contain" />
-        <div className="p-4 flex flex-col gap-2">
+        <section className="p-4 flex flex-col gap-2">
           <span className="text-sm">
             {detail?.condition} - {detail?.sold_quantity} vendidos
           </span>
           <h1 className="text-2xl font-bold">{detail?.title}</h1>
-          <h3 className="text-3xl lg:text-4xl font-bold">
+          <h2 className="text-3xl lg:text-4xl font-bold">
             {Number(detail?.price.amount).toLocaleString('es-AR', {
               style: 'currency',
               currency: detail?.price.currency
             })}
-          </h3>
+          </h2>
           <button className="bg-meli-blue rounded text-white h-10 lg:w-full w-36">Comprar</button>
-        </div>
+        </section>
       </div>
-      <div className="lg:w-3/6 p-4 space-y-2">
+      <section className="lg:w-3/6 p-4 space-y-2">
         <h2 className="text-3xl">Descripcion de producto</h2>
         <p className="text-gray-600">{detail?.description}</p>
-      </div>
+      </section>
     </section>
   );
 };

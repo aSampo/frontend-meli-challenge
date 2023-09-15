@@ -4,8 +4,8 @@ interface BreadcrumbProps {
 
 const Breadcrumb: React.FC<BreadcrumbProps> = ({ categories }) => {
   return (
-    <nav className="flex pb-4" aria-label="Breadcrumb">
-      <ol className="inline-flex items-center space-x-1 md:space-x-3">
+    <nav className=" pb-4" aria-label="Breadcrumb">
+      <ol className="inline-flex items-center space-x-1 md:space-x-3 flex-wrap">
         {categories.map((category, index) => (
           <li className="inline-flex items-center" key={category}>
             {index !== 0 ? (

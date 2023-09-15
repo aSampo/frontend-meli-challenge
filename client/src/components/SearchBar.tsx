@@ -31,7 +31,7 @@ const SearchBar = () => {
           data-testid="search-input"
           placeholder="Nunca dejes de buscar"
           type="text"
-          className="text-base focus:outline outline-meli-blue w-full rounded p-2 border border-gray-300"
+          className="text-sm md:text-base focus:outline outline-meli-blue w-full rounded p-2 border border-gray-300 placeholder-gray-500 placeholder-opacity-0 xs:placeholder-opacity-100"
           maxLength={120}
           value={searchValue}
           onChange={handleInputChange}
