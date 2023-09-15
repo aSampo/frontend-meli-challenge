@@ -1,5 +1,5 @@
 import { render, waitFor, screen } from '@testing-library/react';
-import { MemoryRouter, Routes, Route } from 'react-router-dom'; // Importa Routes y Route
+import { MemoryRouter, Routes, Route } from 'react-router-dom';
 import { fetchItemDetail } from '../api';
 import ItemDetailPage from '../pages/ItemDetailPage';
 import { HelmetProvider } from 'react-helmet-async';
