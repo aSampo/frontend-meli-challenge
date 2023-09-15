@@ -1,12 +1,14 @@
 import { test, expect } from '@playwright/test';
 
+const baseUrl = 'http://localhost:3001/';
+
 test('has home page', async ({ page }) => {
-  await page.goto('http://localhost:3001/');
+  await page.goto(baseUrl);
   await expect(page).toHaveTitle(/Bienvenido a Mercado Libre/);
 });
 
 test('search return products', async ({ page }) => {
-  await page.goto('http://localhost:3001/');
+  await page.goto(baseUrl);
   await page.getByTestId('search-input').fill('camisetas');
   await page.getByTestId('search-button').click();
   await expect(page.getByTestId('loading-element')).toBeVisible();
@@ -15,7 +17,7 @@ test('search return products', async ({ page }) => {
 });
 
 test('search product and navigate to product detail', async ({ page }) => {
-  await page.goto('http://localhost:3001/');
+  await page.goto(baseUrl);
   await page.getByTestId('search-input').fill('camisetas');
   await page.getByTestId('search-button').click();
   await expect(page.getByTestId('loading-element')).toBeVisible();
