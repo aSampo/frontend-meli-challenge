@@ -15,6 +15,7 @@ Este proyecto ha sido desarrollado utilizando las siguientes tecnologías:
 - **Axios**
 - **Jest**
 - **Testing Library**
+- **Playwright e2e**
   
 ### Backend
 
@@ -42,7 +43,7 @@ Asegúrate de tener las siguientes herramientas instaladas en tu sistema:
    npm install
 4. Ve a la carpeta del cliente:
    ```bash
-     cd ../client
+   cd ../client
 5. Instala dependencias:
     ```bash
    npm install
@@ -58,7 +59,7 @@ Asegúrate de tener las siguientes herramientas instaladas en tu sistema:
       (Por defecto el servidor correra en el puerto **3000** (http://**localhost:3000**/), sientase libre de cambiarlo en archivo **.env** del proyecto)
 4. Ve a la carpeta del cliente:
    ```bash
-     cd ../client
+   cd ../client
 5. Ejectuta la aplicacion:
     ```bash
    npm run dev
@@ -69,7 +70,7 @@ Asegúrate de tener las siguientes herramientas instaladas en tu sistema:
 7. Buscar productos:
    
       En el http://localhost:3001/ (o el puerto que eligio) deberia mostrarse la aplicacion lista para usar
-## 🧪 Correr tests
+## 🧪 Correr unit tests
 1. En la ruta del proyecto ve a la carpeta del cliente:
    ```bash
    cd frontend-meli-challenge/client
@@ -80,8 +81,30 @@ Asegúrate de tener las siguientes herramientas instaladas en tu sistema:
     ```
     o para ejecutar el coverage:
    
-     ```bash
-       npm run coverage
-     ```
+   ```bash
+   npm run coverage
+   ```
+
+ ## 🧪 Correr tests e2e
+   
+   Nota: Tener el client y server corriendo y chequear que baseUrl = 'http://localhost:3001/' en **meli.spec.ts** sea el mismo puerto en el que este levantado la app :)
+   
+1. En la ruta del proyecto ve a la carpeta e2e:
+   ```bash
+   cd frontend-meli-challenge/e2e
+2. Instala dependencias:
+    ```bash
+   npm install
+   
+3. Ejectuta los test:
+    ```bash
+   npm run test
+    ```
+    o para ejecutar version UI:
+   
+   ```bash
+   npm run ui
+   ```
+   
 
    
