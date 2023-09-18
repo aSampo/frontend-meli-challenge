@@ -57,9 +57,9 @@ Asegúrate de tener las siguientes herramientas instaladas en tu sistema:
    npm run dev
     ```
       (Por defecto el servidor correra en el puerto **3000** (http://**localhost:3000**/), sientase libre de cambiarlo en archivo **.env** del proyecto)
-4. Ve a la carpeta del cliente:
+4. En otra terminal ve a la carpeta del cliente:
    ```bash
-   cd ../client
+   cd frontend-meli-challenge/client
 5. Ejectuta la aplicacion:
     ```bash
    npm run dev
